@@ -25,7 +25,7 @@ class JobDisplay extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.myFunction}></button>
+        <button class="btn btn-primary" onClick={this.myFunction}></button>
         <div>
           {this.renderJobs()}
         </div>
