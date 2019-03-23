@@ -1,6 +1,7 @@
 import React from 'react'
 
-class Template extends React.Component(){
+class Template extends React.Component{
+ 
 
   myFunction = () => {
     console.log('hello')
@@ -9,7 +10,7 @@ class Template extends React.Component(){
   render(){
     return(
       <div>
-        <button onClick={}></button>
+        
         </div>
 
     );
