@@ -3,7 +3,31 @@ import logo from './logo.svg';
 import './App.css';
 import JobDisplay from './JobDisplay';
 
+const page = {
+  jobDescription: "JOB_DESCRIPTION_PAGE",
+  jobSeeker: "JOB_SEEKER"
+}
+
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      currPage: page.jobDescription
+    }
+  }
+
+  goToJobDescription = () => {
+    this.setState({
+      currPage: page.jobDescription
+    })
+  }
+
+  goToJobSeeker = () => {
+    this.setState({
+      currPage: page.jobSeeker
+    })
+    console.log('going to job seeker')
+  }
 
   renderNav = () => {
     return <div>
@@ -11,10 +35,10 @@ class App extends Component {
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Active</a>
+              <a class="nav-link active" href="#" onClick={this.goToJobDescription}>Add/Remove/Edit Job Description</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#" onClick={this.goToJobSeeker}>Job Seeker</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
@@ -22,20 +46,28 @@ class App extends Component {
           </ul>
         </div>
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">BROCK UNIVERSITY</h5>
+          <p class="card-text">With great powers comes great responsibility.</p>
+          <a href="#" class="btn btn-primary">Pretty Button.</a>
         </div>
       </div>
     </div>
   }
   render() {
+    console.log(this.state.currPage, " and ", page.jobDescription)
+    let currPage = '';
+    if (this.state.currPage === page.jobDescription)
+      currPage = <JobDisplay/>;
+    else 
+      currPage = <div></div>
+
     return (
       <div className="App">
         {this.renderNav()}
-
-
-        <JobDisplay />
+        {
+          currPage
+        }
+        
       </div>
     );
   }
