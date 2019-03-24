@@ -16,20 +16,20 @@ class App extends Component {
       currPage: page.jobDescription
     }
   }
-
+  //page navigation to job description
   goToJobDescription = () => {
     this.setState({
       currPage: page.jobDescription
     })
   }
-
+  //page navigation to job seeker information
   goToJobSeeker = () => {
     this.setState({
       currPage: page.jobSeeker
     })
     console.log('going to job seeker')
   }
-
+  //css for Nav bar
   renderNav = () => {
     return <div>
       <div class="card text-center">
@@ -52,6 +52,7 @@ class App extends Component {
       </div>
     </div>
   }
+  //render function for react page
   render() {
     console.log(this.state.currPage, " and ", page.jobDescription)
     let currPage = '';

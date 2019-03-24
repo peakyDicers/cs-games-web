@@ -39,7 +39,7 @@ class JobSeeker extends React.Component {
     }
     
     class SingleJobDisplay extends React.Component {
-    
+    //css for seeker job information
       render() {
         return <div >
             <div className="card" style={{width: 300}}>
