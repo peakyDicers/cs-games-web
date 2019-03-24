@@ -25,10 +25,29 @@ class JobDisplay extends React.Component {
     })
   }
 
+  filterBySalary = () => {
+    let temp = this.state.data;
+    temp.sort((a, b) => a.salary > b.salary);
+    console.log(temp);
+
+    this.setState({
+      data: temp
+    })
+  }
+
   render() {
     return (
       <div>
         <div>
+          <div>
+            <h3>Filter by: </h3>
+            <button className="btn btn-secondary mr-5">
+              Date Posted
+            </button>
+            <button className="btn btn-secondary" onClick={this.filterBySalary}>
+              Salary
+            </button>
+          </div>
           {this.renderJobs()}
         </div>
       </div>
@@ -71,6 +90,7 @@ class SingleJobDisplay extends React.Component {
   }
 
   render() {
+
     return <div className="border-bottom container">
       <div className="d-flex flex-row">
         <div className="container d-flex flex-column">

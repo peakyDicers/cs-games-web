@@ -47,8 +47,6 @@ class App extends Component {
         </div>
         <div class="card-body">
           <h5 class="card-title">BROCK UNIVERSITY</h5>
-          <p class="card-text">With great powers comes great responsibility.</p>
-          <a href="#" class="btn btn-primary">Pretty Button.</a>
         </div>
       </div>
     </div>
