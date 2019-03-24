@@ -58,7 +58,7 @@ class App extends Component {
     if (this.state.currPage === page.jobDescription)
       currPage = <JobDisplay/>;
     else 
-      currPage = <div></div>
+      currPage = <JobSeeker/>;
 
     return (
       <div className="App">
